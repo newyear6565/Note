@@ -27,24 +27,29 @@ events {
 }
 
 http {
-    include       mime.types;
-    default_type  application/octet-stream;
-    sendfile        on; 
+    include            mime.types;
+    default_type       application/octet-stream;
+    sendfile           on; 
     keepalive_timeout  65; 
-    charset utf-8;        # 设置编码格式
+    charset utf-8;                # 设置编码格式
     
 
     server {
-    listen 8081;             # 端口号
-    #server_name _;           # 配置域名信息
-    root /home/zgy/webbook;               # 静态页面根目录
-    index index.html;
-    }   
-
+    	listen 8081;              # 端口号
+    	#server_name _;           # 配置域名信息
+    	root /home/zgy/webbook;   # 静态页面根目录
+    	index index.html;
+    }
 }
 ```
 
+启动nginx，-c指定配置文件路径，-p指定目录名
+```bash
+./nginx -c /home/zgy/tool/nginx/nginx/usr/local/nginx/conf/nginx.conf -p /home/zgy/tool/nginx/tmp
+```
+
 ### 插件的使用
+
 添加book.js
 
 ```json
